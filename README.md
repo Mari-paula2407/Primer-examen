@@ -47,10 +47,62 @@ R\\Si bien pareciera que a simple vista el vector x es el mas eficiente pues es 
  Pregunta 3
 1. Proponga una implementación en C++ de la clase AdjacencyList , defina apropiadamente sus atributos y sus operaciones. Usted puede utilizar para esto cualquiera de las estructuras de datos discutidas en clase.
 
-R\\ 
+R\\
+class AdjacencyList {
+private:
+    std::vector<std::list<int>> adjList; // Vector de listas para almacenar conexiones
 
+public:
+    // Constructor que inicializa la lista de adyacencia para un número dado de ciudades
+    AdjacencyList(int numCities) {
+        adjList.resize(numCities);
+    }
 
+  // Método para agregar una conexión bidireccional
+    void addEdge(int city1, int city2) {
+        adjList[city1].push_back(city2);
+        adjList[city2].push_back(city1); // Comente esta línea si la conexión debe ser unidireccional
+    }
 
+  // Método para imprimir la lista de adyacencia
+    void printAdjList() {
+        for (int i = 0; i < adjList.size(); ++i) {
+            std::cout << "Ciudad " << i << " tiene conexiones con: ";
+            for (int city : adjList[i]) {
+                std::cout << city << " ";
+            }
+            std::cout << "\n";
+        }
+    }
+};
+
+// Función principal para demostrar el uso de la clase AdjacencyList
+int main() {
+    // Supongamos que hay 6 ciudades, como en el ejemplo proporcionado
+    AdjacencyList graph(6);
+
+  // Añadiendo las conexiones como se describen en el gráfico
+    graph.addEdge(0, 1);
+    graph.addEdge(0, 4);
+    graph.addEdge(0, 5);
+    graph.addEdge(1, 2);
+    graph.addEdge(1, 5);
+    graph.addEdge(2, 3);
+    graph.addEdge(2, 5);
+    graph.addEdge(3, 4);
+    graph.addEdge(4, 5);
+
+   // Imprimir la lista de adyacencia
+    graph.printAdjList();
+
+   return 0;
+}
+
+2. Cree operaciones para adicionar y remover ciudades.
+R\\
+3. Cree una operación que dada una ciudad retorne las ciudades que se encuentran
+conectadas con esta.
+R\\
 
 
 
