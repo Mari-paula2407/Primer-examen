@@ -7,7 +7,6 @@ R\\No es mejor dado que una de las ventajas de utilizar vectores es el echo de q
 Además, tener que llevar un registro de las ubicaciones separadas de los elementos introduciría una complejidad adicional en la implementación del vector, lo cual afectaría su rendimiento en varias operaciones.
 
 2. Si comparamos el vector con una lista enlazada como la implementada en el curso creeusted que la lista pueda ser más eficiente?. Justifique su respuesta.
-
 R\\Depende de la necesidad, pues si necesitamos almacenar mucha informacion sin un acceso claro o aleatorio de manera rapida y con informacion en movimiento, es mejor la lista enlazada, por el contrario si lo que se necesita es informacion con un facil y rapido acceso de manera aleatoria o sin muchos cambios en la informacion almacenada el vector es el mejor.
 
 Pregunta 2
